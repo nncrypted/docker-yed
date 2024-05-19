@@ -1,5 +1,5 @@
 # Ubuntu
-FROM ubuntu:latest
+FROM ubuntu:focal
 
 # Download link and installer script
 ARG YED_DL=https://www.yworks.com/resources/yed/demo/
@@ -24,7 +24,7 @@ RUN apt-get -y install dbus-x11 # Fix "dconf-WARNING **: failed to commit change
 
 # Get dependencies
 RUN apt-get -y install wget
-RUN apt-get -y install openjdk-18-jre
+RUN apt-get -y install openjdk-8-jre
 
 # Create new user yed
 RUN groupadd -g "${YED_GID}" yed && useradd --create-home --no-log-init -u "${YED_UID}" -g "${YED_GID}" yed
